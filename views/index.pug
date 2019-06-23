@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  script.
+    var randomcolors = function () {
+      function randHex(length, current) {
+        current = current ? current : '';
+        return length ? randHex(--length, "0123456789ABCDEF".charAt(Math.floor(Math.random() * 16)) + current) : current;
+      }
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "/api/show", true);
+      // text plain, because we're not passing an array
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      const data = randHex(64*6,'');
+      xhr.send("colors="+data);
+    }
+    var wipe = function () {
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "/api/wipe", true);
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+      xhr.send("");
+    }
+  h1= title
+  p Welcome Master! How can your humble servant help you?
+  button(onclick='randomcolors()') Set Random Colors
+  button(onclick='wipe()') Wipe its ass
