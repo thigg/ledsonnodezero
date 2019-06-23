@@ -24,7 +24,8 @@ When the systemd-service on startup is enabled, it is automatically on port 80.
 ### Deployment
  - You can deploy the code in WebStorm by adding a sftp deployment to the folder.
  This syncs your changes immediatley
- ---
+
+
  ## Development
  ### JavaScript
  - `/api` in `routes ledapi.js` defines a rest api, which can be used to control the LEDs via REST. The current implementation has a `/api/show` endpoint, which takes the colors as hex string. 6 Characters per color.
@@ -39,7 +40,8 @@ When the systemd-service on startup is enabled, it is automatically on port 80.
  ### Debugging
  Check the output of the webserver and the responses on your requests in the developer tools.
  Make sure, that, when using the `/api/show` function only characters from `0-9A-F` are given.
----
+
+
 ## Hardware and Setup
 - Built with a raspberry pi zero.
 - System setup like here: https://learn.adafruit.com/neopixels-on-raspberry-pi?view=all
