@@ -9,7 +9,7 @@ Protip: use a powerbank and your Phone to use it while on the way.
 You can use it with any RaspberryPi and any WS281x LEDs. (I used a WS2812 matrix).
 
 
-
+---
 ## Connecting to the Raspberry
 The Webserver is by default on Port 3000. You can change that with an enviroment variable like `NODE_PORT=80`.
 When the systemd-service on startup is enabled, it is automatically on port 80.
@@ -24,7 +24,7 @@ When the systemd-service on startup is enabled, it is automatically on port 80.
 ### Deployment
  - You can deploy the code in WebStorm by adding a sftp deployment to the folder.
  This syncs your changes immediatley
- 
+ ---
  ## Development
  ### JavaScript
  - `/api` in `routes ledapi.js` defines a rest api, which can be used to control the LEDs via REST. The current implementation has a `/api/show` endpoint, which takes the colors as hex string. 6 Characters per color.
@@ -33,8 +33,13 @@ When the systemd-service on startup is enabled, it is automatically on port 80.
  The python script listenes simply on stdin and reads always 2 lines. The first defines the command and the second the arguments for this command.
  Currently:
  - `show` and a string of hex encoded colors. 6 characters per color, simply concatenated.
- - `wupe` sets black as color for all LEDs
-
+ - `wipe` sets black as color for all LEDs
+ 
+ The output of the python script is piped to the stdout of the nodejs server.
+ ### Debugging
+ Check the output of the webserver and the responses on your requests in the developer tools.
+ Make sure, that, when using the `/api/show` function only characters from `0-9A-F` are given.
+---
 ## Hardware and Setup
 - Built with a raspberry pi zero.
 - System setup like here: https://learn.adafruit.com/neopixels-on-raspberry-pi?view=all
@@ -53,3 +58,7 @@ For that you need to copy the `ledsonpi.service` file to `/lib/systemd/system/`.
 - Now you can enable the service with `sudo systemct enable ledsonpi.service`.
 - And you can check its status with  `sudo systemctl status ledsonpi`
 - Stop it with `sudo systemctl stop ledsonpi`.
+- See the output of the webserver with `sudo journalctl -u ledsonpi`
+
+
+
