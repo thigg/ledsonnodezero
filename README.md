@@ -45,7 +45,7 @@ You can start the server manually when you ssh'd into the raspberry, with `sudo 
 
 If you stopped the service (see below) and the server is not running, you can use the ̀ledapi.py ̀ script manually:
 ```
-python3 ledapi.py
+pi@raspberrypi $ sudo python3 ledapi.py
 show
 ffffff
 ```
