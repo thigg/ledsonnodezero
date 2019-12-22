@@ -14,6 +14,8 @@ You can use it with any RaspberryPi and any WS281x LEDs. (I used a WS2812 matrix
 The Webserver is by default on Port 3000. You can change that with an enviroment variable like `NODE_PORT=80`.
 When the systemd-service on startup is enabled, it is automatically on port 80.
 
+You can start the server manually when you ssh'd into the raspberry, with `sudo node bin/www` from the directory of the project.
+
 ### SSH Access
 - Confirmed for RPi Zero: Use the not-power (the second one) usb port to connect the raspberry to a computer. It should show up as a ethernet adapter and should be reachable via `raspberry.local`.
 - You can connect to it via `ssh pi@raspberrypi.local`
@@ -41,6 +43,14 @@ When the systemd-service on startup is enabled, it is automatically on port 80.
  Check the output of the webserver and the responses on your requests in the developer tools.
  Make sure, that, when using the `/api/show` function only characters from `0-9A-F` are given.
 
+If you stopped the service (see below) and the server is not running, you can use the ̀ledapi.py ̀ script manually:
+```
+python3 ledapi.py
+show
+ffffff
+```
+
+should light up one led
 
 ## Hardware and Setup
 - Built with a raspberry pi zero.
