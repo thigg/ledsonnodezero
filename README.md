@@ -57,7 +57,7 @@ When the systemd-service on startup is enabled, it is automatically on port 80.
 Enable the server on startup with an systemd service.
 For that you need to copy the `ledsonpi.service` file to `/lib/systemd/system/`.
 - Go into the folder where the `.service` file is and run `sudo cp ledsonpi.service /lib/systemd/system/`.
-- Now you can enable the service with `sudo systemct enable ledsonpi.service`.
+- Now you can enable the service with `sudo systemctl enable ledsonpi.service`.
 - And you can check its status with  `sudo systemctl status ledsonpi`
 - Stop it with `sudo systemctl stop ledsonpi`.
 - See the output of the webserver with `sudo journalctl -u ledsonpi`
