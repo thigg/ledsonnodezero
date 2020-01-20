@@ -4,9 +4,10 @@ Documentation=https://github.com/thigg/ledsonnodezero
 After=network.target
 
 [Service]
+WorkingDirectory=/home/pi/ledsonpi
 Environment=NODE_PORT=80
 Type=simple
-User=pi
+User=root
 ExecStart=/usr/bin/node /home/pi/ledsonpi/bin/www
 Restart=on-failure
 
