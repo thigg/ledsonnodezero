@@ -11,7 +11,9 @@ You can use it with any RaspberryPi and any WS281x LEDs. (I used a WS2812 matrix
 
 ---
 ## Connecting to the Raspberry
-The Webserver is by default on Port 3000. You can change that with an enviroment variable like `NODE_PORT=80`.
+The Webserver is by default on Port 3000.
+Thus you can reach it via http://raspberrypi.local:3000 .
+ You can change that with an enviroment variable like `NODE_PORT=80`.
 When the systemd-service on startup is enabled, it is automatically on port 80.
 
 You can start the server manually when you ssh'd into the raspberry, with `sudo node bin/www` from the directory of the project.
