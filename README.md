@@ -42,7 +42,12 @@ You can start the server manually when you ssh'd into the raspberry, with `sudo 
  ### Python
  The python script listenes simply on stdin and reads always 2 lines. The first defines the command and the second the arguments for this command.
  Currently:
- - `show` and a string of hex encoded colors. 6 characters per color, simply concatenated.
+ - `show` and a string of hex encoded colors. 6 characters per color (2 for red, 2 green, 2 blue), simply concatenated.
+```
+show
+ffffff
+```
+Lights a single led
  - `wipe` sets black as color for all LEDs
  
  The output of the python script is piped to the stdout of the nodejs server.
@@ -57,7 +62,7 @@ show
 ffffff
 ```
 
-should light up one led
+should light up the first led in white.
 
 ## Hardware and Setup
 - Built with a raspberry pi zero.
