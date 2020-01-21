@@ -31,6 +31,11 @@ You can start the server manually when you ssh'd into the raspberry, with `sudo 
 
 
  ## Development
+
+ ### Frontend
+ - the pug source is in `views`. The express webserver compiles it automatically to html during startup. For further information look at pugjs.org
+ - You can serve static files like the `code.js` via the public folder.
+ - in `public/code.js` lies an example which allows to convert images to the hexstring for the led. You can use it  by creating a file input on the page an call the according function via the onchange attribute.
  ### JavaScript
  - `/api` in `routes ledapi.js` defines a rest api, which can be used to control the LEDs via REST. The current implementation has a `/api/show` endpoint, which takes the colors as hex string. 6 Characters per color.
  - `views/index.pug` is the pug/jade definition of the website. Currently it shows 2 buttons to controll the two sample functions.
