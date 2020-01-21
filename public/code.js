@@ -28,7 +28,7 @@ var convertToHex = (r,g,b) => {
 var handleFiles = files => {
   //files.forEach(console.log);
   const imgfile = files[0];
-  var reader = new FileReader();
+  const reader = new FileReader();
   reader.onload = function(event){
        const img = new Image();
        img.onload = function(){
